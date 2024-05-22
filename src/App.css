@@ -1,38 +1,335 @@
-.App {
-  text-align: center;
+*{
+  padding: 0;
+  margin: 0;
+  transition: 0.3s ease-in-out;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.LoginPage, .RegistrationPage{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  transition:0.6s ease-in-out ;
+  
+}
+.account, .create{
+  display: flex;
+  justify-content: space-evenly;
+  width: 250px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.account a, .create a{
+  color:#0d6efd;
+  text-decoration: none;
+  font-weight: 600;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.twt{
+  font-size: 35px;
+  /* color:#0d6efd; */
+color: rgb(29, 155, 240);
+}
+.RegistrationPage{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.login, .register{
+  width: 50%;
+  height: 100%;
+  background: url(./Images/abstract.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+}
+.img{
+  width: 50%;
+  height: 100%; 
 }
 
-.App-link {
-  color: #61dafb;
+#name, #email, #password{
+  width: 450px;
+  padding: 20px 30px;
+  margin: 10px 0;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+}
+#name::placeholder{
+  font-size: 16px;
+  font-weight: 600;
+  color: #555;
+  font-family: 'Kablammo', cursive;
+  padding-left: 30px;
+}
+#email::placeholder{
+  font-size: 16px;
+  font-weight: 600;
+  color: #555;
+  font-family: 'Kablammo', cursive;
+  padding-left: 30px;
+}
+#password::placeholder{
+  font-size: 16px;
+  font-weight: 600;
+  color: #555;
+  font-family: 'Kablammo', cursive;
+  padding-left: 30px;
+}
+#login, #register{
+  border-radius: 10px;
+  border: none;
+  background-color: #0d6efd;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  width: 200px;
+  padding: 20px 0;
+  transition: 0.3s ease-in-out;
+}
+#login:hover{
+  background-color: #fff;
+  color: #0d6efd;
+}
+.img{
+  background: url(./Images/img.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 50%;
+}
+.Tweets{
+  width: 100%;
+  /* height: 100vh; */
+  display: flex;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.Sidebar{
+  width: 20%;
+height: 94%;
+padding: 20px 20px;
+border-right: 1px solid grey;
+display: flex;
+position: fixed;
+flex-direction: column;
+}
+
+/* .Sidebar:hover{
+  width: 20%;
+  background-color: #fff;
+} */
+.Sidebar a{
+  color: black;
+  font-weight: 400;
+  font-size: 20px;
+  text-decoration: none;
+  margin: 10px 10px 0px 60px;
+  display: flex;
+  align-items: center;
+  padding:10px 18px;
+  transition: 0.3s ease-in-out;
+  width: max-content;
+}
+
+.Sidebar a:hover{
+  color: black;
+  background-color: #99999937;
+  border-radius: 30px;
+}
+.icons{
+  font-size: 24px;
+  /* color: transparent; */
+  margin-right: 20px;
+}
+.Sidebar .twt{
+  font-size: 24px;
+  color:#0d6efd;
+}
+
+#Tweet{
+  background-color: #0d6efd;
+  /* background-color: blue; */
+  background-color: rgb(29, 155, 240);
+  color: #fff;
+  /* width: 50%; */
+  border-radius: 30px;
+  padding: 12px;
+  margin: 10px 10px 0px 60px;
+  font-weight: 600;
+  border: none;
+  font-size: 19px;
+  cursor: pointer;
+}
+#Tweet:hover{
+  background-color: #095ddb;
+}
+
+.tweet,.tweet2{
+  position: relative;
+  width: 44%;
+  margin-left: 23%;
+  height: 100vh;
+  margin-top: 100px;
+  overflow-y: scroll;
+  
+}
+.tweet{
+  border-right: 1px solid #999;
+}
+.tweet2{
+  margin-left: 0;
+
+}
+.home, .home2{
+  height: 100px;
+  border-bottom: 1px solid #000;
+  background-color: white;
+  position: relative;
+  top: 0;
+  left: 23%;
+  z-index: 2;
+}
+
+
+.home h1, .home2 h1{
+margin-left: 10px;
+margin-top: 20px;
+font-size: 22px;
+}
+.tweet p, .tweet2 p{
+  width: 80%;
+  margin: 10px 30px;
+}
+#one{
+  margin-top: 19%;
+}
+#signOut{
+  color: #0d6efd;
+  margin: 10px 10px 0px 60px;
+  font-weight: 700;
+  cursor: pointer;
+}
+#signOut:hover{
+  color:#095ddb;
+}
+
+.post {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.post textarea {
+  padding: 10px 0;
+  /* margin-left: 20px; */
+  margin-bottom: 20px;
+  width: 90%;
+  height: 100px;
+  border: none;
+  background-color: inherit;
+  resize: none;
+  outline: none;
+  font-size: 18px;
+  padding-left: 10px;
+  
+}
+
+.post textarea:active{
+  border: none;
+}
+
+textarea::placeholder{
+font-size: 18px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  /* border: none; */
+}
+
+#send {
+  width: 90px;
+  /* margin-left: 77%; */
+  /* margin-top: 5%; */
+  /* margin-bottom: 1%; */
+  border-radius: 20px;
+  font-weight: 700;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  background-color: #3d97e6;
+  color: #fff;
+  cursor: pointer;
+}
+
+.any{
+  width: 96%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.imogi{
+  width: 40%;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 20px;
+  color:#0d6efd;
+}
+.imo{
+  cursor: pointer;
+  padding: 7px;
+}
+.imo:hover{
+  border-radius: 50%;
+  background-color: #A5D7F9;
+  opacity: 0.7;
+}
+
+.prof{
+  display: flex;
+}
+#pimg{
+  width: 80px;
+  height: 63px;
+ border-radius: 50%; 
+ background: url(https://media.istockphoto.com/id/1318858332/photo/headshot-portrait-of-smiling-female-employee-posing-in-office.jpg?b=1&s=612x612&w=0&k=20&c=eQZWudpSO-UGWcCjMgSbouGAySLWBG2J0-hJUIvebF8=);
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center;
+}
+
+#nme{
+  margin-left: 6px;
+}
+@media(max-width:800px){
+  .LoginPage, .RegistrationPage{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
   }
-  to {
-    transform: rotate(360deg);
+
+   .login, .register{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .img{
+    background: url(./Images/img.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 50%;
+  }
+  #name, #email, #password{
+    width: 90%;
+    height:30px;
+    padding: 6px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #0d6efd;
   }
 }
